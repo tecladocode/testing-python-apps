@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+exports/
+presentations/
+videos/
+.vscode/
+venv/
+testing-python-apps.txt
+theme.key
