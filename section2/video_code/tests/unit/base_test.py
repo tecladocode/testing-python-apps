@@ -19,6 +19,7 @@ class BaseTest(TestCase):
             db.init_app(app)
             db.create_all()
         self.app = app.test_client()
+        self.app_context = app.app_context
     
     def tearDown(self):
         with app.app_context():
