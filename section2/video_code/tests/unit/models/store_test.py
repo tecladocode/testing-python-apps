@@ -6,10 +6,6 @@ from ..base_test import BaseTest
 
 class StoreTest(BaseTest):
     def test_create_store(self):
-        # Notice this won't work with PostgreSQL, because of
-        # foreign key constraints.
-        # The store doesn't exist yet, so it would raise an error.
-        # SQLite has no foreign key constraint enforcement, so it works there.
         store = StoreModel('test')
 
         self.assertEqual(store.name, 'test', "The name of the store after creation does not equal the constructor argument.")
