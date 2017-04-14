@@ -2,7 +2,7 @@
 Unit tests for the Item model.
 """
 from models.item import ItemModel
-from tests.unit.base_test import BaseTest
+from tests.base_test import BaseTest
 
 
 class ItemTest(BaseTest):
@@ -32,18 +32,3 @@ class ItemTest(BaseTest):
             item.json(),
             expected,
             "The JSON export of the item is incorrect. Received {}, expected {}.".format(item.json(), expected))
-
-    def test_crud(self):
-        with self.app_context():
-            item = ItemModel('test', 19.99, 1)
-
-            self.assertIsNone(ItemModel.find_by_name('test'), "Found an item with name 'test' before save_to_db")
-
-            item.save_to_db()
-
-            self.assertIsNotNone(ItemModel.find_by_name('test'),
-                                 "Did not find an item with name 'test' after save_to_db")
-
-            item.delete_from_db()
-
-            self.assertIsNone(ItemModel.find_by_name('test'), "Found an item with name 'test' after delete_from_db")

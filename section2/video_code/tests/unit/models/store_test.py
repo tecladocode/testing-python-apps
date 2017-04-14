@@ -2,7 +2,7 @@
 Unit tests for the store model.
 """
 from models.store import StoreModel
-from tests.unit.base_test import BaseTest
+from tests.base_test import BaseTest
 
 
 class StoreTest(BaseTest):
@@ -25,18 +25,3 @@ class StoreTest(BaseTest):
             store.json(),
             expected,
             "The JSON export of the store is incorrect. Received {}, expected {}.".format(store.json(), expected))
-
-    def test_crud(self):
-        with self.app_context():
-            store = StoreModel('test')
-
-            self.assertIsNone(StoreModel.find_by_name('test'), "Found an store with name 'test' before save_to_db")
-
-            store.save_to_db()
-
-            self.assertIsNotNone(StoreModel.find_by_name('test'),
-                                 "Did not find an store with name 'test' after save_to_db")
-
-            store.delete_from_db()
-
-            self.assertIsNone(StoreModel.find_by_name('test'), "Found an store with name 'test' after delete_from_db")
