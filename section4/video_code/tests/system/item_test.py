@@ -80,15 +80,6 @@ class ItemTest(BaseTest):
                 self.assertDictEqual(d1={'name': 'test', 'price': 17.99},
                                      d2=json.loads(r.data))
 
-    def test_put_duplicate_item(self):
-        with self.app() as c:
-            with self.app_context():
-                StoreModel('test').save_to_db()
-                c.put('/item/test', data={'price': 17.99, 'store_id': 1})
-                r = c.put('/item/test', data={'price': 17.99, 'store_id': 1})
-
-                self.assertEqual(r.status_code, 200)
-
     def test_put_update_item(self):
         with self.app() as c:
             with self.app_context():
