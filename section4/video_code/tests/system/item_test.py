@@ -64,7 +64,7 @@ class ItemTest(BaseTest):
         with self.app() as c:
             with self.app_context():
                 StoreModel('test').save_to_db()
-                r = c.post('/item/test', data={'price': 17.99, 'store_id': 1})
+                c.post('/item/test', data={'price': 17.99, 'store_id': 1})
                 r = c.post('/item/test', data={'price': 17.99, 'store_id': 1})
 
                 self.assertEqual(r.status_code, 400)
