@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, jsonify
 from flask_restful import Api
-import flask_jwt
+from flask_jwt import JWT, JWTError
 
 from security import authenticate, identity
 from resources.user import UserRegister
@@ -19,7 +19,7 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose'
 api = Api(app)
 
-jwt = flask_jwt.JWT(app, authenticate, identity)  # /auth
+jwt = JWT(app, authenticate, identity)  # /auth
 
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(Item, '/item/<string:name>')
@@ -29,7 +29,7 @@ api.add_resource(StoreList, '/stores')
 api.add_resource(UserRegister, '/register')
 
 
-@app.errorhandler(flask_jwt.JWTError)
+@app.errorhandler(JWTError)
 def auth_error(err):
     return jsonify({'message': 'Could not authorize. Did you include a valid Authorization header?'}), 401
 
