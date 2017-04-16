@@ -64,7 +64,7 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "tests[\"Body contains access_token\"] = responseBody.has(\"access_token\");",
                   "",
-                  "tests[\"Response time is less than 200ms\"] = responseTime < 150;",
+                  "tests[\"Response time is less than 150ms\"] = responseTime < 150;",
                   "",
                   "tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
                   "tests[\"Content-Type is 'application/json'\"] = postman.getResponseHeader(\"Content-Type\") === 'application/json';"
