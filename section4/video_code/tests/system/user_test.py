@@ -14,6 +14,17 @@ class UserTest(BaseTest):
                 self.assertDictEqual(d1={'message': 'User created successfully.'},
                                      d2=json.loads(r.data))
 
+    def test_register_and_login(self):
+        with self.app() as c:
+            with self.app_context():
+                c.post('/register', data={'username': 'test', 'password': '1234'})
+                auth_request = c.post('/auth', data=json.dumps({
+                    'username': 'test',
+                    'password': '1234'
+                }), headers={'Content-Type': 'application/json'})
+
+                self.assertIn('access_token', json.loads(auth_request.data).keys())
+
     def test_register_duplicate_user(self):
         with self.app() as c:
             with self.app_context():
