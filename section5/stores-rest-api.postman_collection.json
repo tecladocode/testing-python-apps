@@ -100,11 +100,16 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"Store name is returned\"] = jsonData.name === 'test_store';",
+                  "tests[\"Store id is returned\"] = jsonData.id === 1;",
+                  "tests[\"Store items are an empty list\"] = jsonData.items.length === 0;",
+                  "",
                   "tests[\"Successful POST request\"] = responseCode.code === 201;",
                   "tests[\"Response time is less than 200ms\"] = responseTime < 200;",
                   "",
                   "tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
-                  "tests[\"Content-Type is 'application/json'\"] = postman.getResponseHeader(\"Content-Type\") === 'application/json';"
+                  "tests[\"Content-Type is 'application/json'\"] = postman.getResponseHeader(\"Content-Type\") === 'application/json';",
+                  "",
+                  "postman.setEnvironmentVariable(\"store_id\", jsonData.id);"
                 ]
               }
             }
@@ -150,7 +155,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"price\": 17.99,\n\t\"store_id\": 1\n}"
+              "raw": "{\n\t\"price\": 17.99,\n\t\"store_id\": {{store_id}}\n}"
             },
             "description": ""
           },
@@ -166,6 +171,7 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"Store 'test_store' is returned\"] = jsonData.stores[0].name === 'test_store';",
+                  "tests[\"ID of store 'test_store' is returned\"] = jsonData.stores[0].id === parseInt(environment.store_id);",
                   "tests[\"Item 'test_item' is returned inside 'test_store'\"] = jsonData.stores[0].items[0].name === 'test_item';",
                   "tests[\"Item 'test_item' price is returned inside 'test_store'\"] = jsonData.stores[0].items[0].price === 17.99;",
                   "",

@@ -9,3 +9,4 @@ videos/
 venv/
 testing-python-apps.txt
 theme.key
+data.db
