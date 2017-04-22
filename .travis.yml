@@ -1,0 +1,14 @@
+language: python
+env:
+ - PYTHONPATH=`pwd`/section2/video_code/
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.6-dev" # 3.6 development branch
+  - "3.7-dev" # 3.7 development branch
+  - "nightly" # currently points to 3.7-dev
+# command to install dependencies
+install: "pip install -r section2/video_code/requirements.txt"
+# command to run tests
+script: pytest section2/video_code/
