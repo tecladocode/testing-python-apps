@@ -10,6 +10,8 @@
 
 - Travis CI is set up only for Section 2.
 
+https://docs.travis-ci.com/user/languages/python/
+
 ### Section 3: Integration testing
 
 ### Sections 4 + 5: System testing
@@ -21,9 +23,8 @@
 Remember to cover installing the necessary PyCharm plugins to be able to run things
 simultaneously. Need:
 
-
-- Multirun
-- BashSupport (or CMDSupport on Windows)
+- `Multirun`, to allow to run multiple configurations in parallel.
+- `BashSupport` (or `CMDSupport` on Windows), to allow running command-line scripts.
     - Also need to check how to do this on Windows
 
 ### Section 6: Acceptance testing
