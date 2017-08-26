@@ -33,7 +33,6 @@ api.add_resource(UserRegister, '/register')
 def auth_error(err):
     return jsonify({'message': 'Could not authorize. Did you include a valid Authorization header?'}), 401
 
-
 if __name__ == '__main__':
     from db import db
 

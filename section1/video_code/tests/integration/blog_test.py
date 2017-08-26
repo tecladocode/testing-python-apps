@@ -13,7 +13,7 @@ class BlogTest(TestCase):
     def test_blog_repr(self):
         b = Blog('Test', 'Test author')
 
-        self.assertEqual(str(b), "Test by Test author (0 posts)")
+        self.assertEqual(str(b), 'Test by Test author (0 posts)')
 
     def test_json_with_posts(self):
         b = Blog('Test', 'Test author')

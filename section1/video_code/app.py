@@ -62,4 +62,5 @@ def ask_create_post():
     blogs[blog].create_post(title, content)
 
 
-menu()
+if __name__ == '__main__':
+    menu()

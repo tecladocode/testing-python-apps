@@ -1,9 +1,14 @@
+from unittest import TestCase
+
 from models.item import ItemModel
-from tests.base_test import BaseTest
 
 
-class ItemTest(BaseTest):
+class ItemTest(TestCase):
     def test_create_item(self):
+        # Notice this won't work with PostgreSQL, because of
+        # foreign key constraints.
+        # The store doesn't exist yet, so it would raise an error.
+        # SQLite has no foreign key constraint enforcement, so it works there.
         item = ItemModel('test', 19.99, 1)
 
         self.assertEqual(item.name, 'test',
