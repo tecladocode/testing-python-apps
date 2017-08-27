@@ -1,6 +1,6 @@
 language: python
 env:
- - PYTHONPATH=`pwd`/section3/video_code/
+ - PYTHONPATH=`pwd`
 python:
   - "2.7"
   - "3.5"
