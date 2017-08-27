@@ -4,7 +4,11 @@
 
 ## Testing while you build
 
-### Section 2: Unit testing
+### Section 3: Intro to unittest
+
+### Section 4: Unit testing a simple Flask endpoint
+
+### Section 5: Unit testing a REST API
 
 #### Continuous Integration
 
@@ -12,13 +16,13 @@
 
 https://docs.travis-ci.com/user/languages/python/
 
-### Section 3: Integration testing
+### Section 6: Integration testing a REST API
 
-### Sections 4 + 5: System testing
+### Sections 7 + 8: System testing a REST API
 
-#### 4: unittest
+#### 7: unittest
 
-#### 5: Postman + newman
+#### 8: Postman + newman
 
 Remember to cover installing the necessary PyCharm plugins to be able to run things
 simultaneously. Need:
@@ -27,6 +31,6 @@ simultaneously. Need:
 - `BashSupport` (or `CMDSupport` on Windows), to allow running command-line scripts.
     - Also need to check how to do this on Windows
 
-### Section 6: Acceptance testing
+### Section 9: Acceptance testing a website
 
-### Section 7: Contract testing (not now)
+### Section 10: Contract testing (not now)

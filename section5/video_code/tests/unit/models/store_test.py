@@ -1,8 +1,9 @@
+from unittest import TestCase
+
 from models.store import StoreModel
-from tests.base_test import BaseTest
 
 
-class StoreTest(BaseTest):
+class StoreTest(TestCase):
     def test_create_store(self):
         store = StoreModel('test')
 
