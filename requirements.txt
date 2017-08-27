@@ -1,0 +1,9 @@
+Flask
+Flask-RESTful
+Flask-JWT
+Flask-SQLAlchemy
+uwsgi
+psycopg2
+behave==1.2.5
+beautifulsoup4==4.5.3
+selenium==3.4.1

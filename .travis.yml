@@ -1,6 +1,6 @@
 language: python
 env:
- - PYTHONPATH=`pwd`/section2/video_code/
+ - PYTHONPATH=`pwd`/section3/video_code/
 python:
   - "2.7"
   - "3.5"
@@ -11,6 +11,6 @@ python:
 # command to install dependencies
 install:
   - "pip install pytest"
-  - "pip install -r section2/video_code/requirements.txt"
+  - "pip install -r requirements.txt"
 # command to run tests
-script: python -m pytest section2/video_code/
+script: python -m pytest section3/video_code/
