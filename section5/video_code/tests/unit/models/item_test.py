@@ -5,22 +5,15 @@ from models.item import ItemModel
 
 class ItemTest(TestCase):
     def test_create_item(self):
-        # Notice this won't work with PostgreSQL, because of
-        # foreign key constraints.
-        # The store doesn't exist yet, so it would raise an error.
-        # SQLite has no foreign key constraint enforcement, so it works there.
-        item = ItemModel('test', 19.99, 1)
+        item = ItemModel('test', 19.99)
 
         self.assertEqual(item.name, 'test',
                          "The name of the item after creation does not equal the constructor argument.")
         self.assertEqual(item.price, 19.99,
                          "The price of the item after creation does not equal the constructor argument.")
-        self.assertEqual(item.store_id, 1,
-                         "The store_id of the item after creation does not equal the constructor argument.")
-        self.assertIsNone(item.store, "The item's store was not None even though the store was not created.")
 
     def test_item_json(self):
-        item = ItemModel('test', 19.99, 1)
+        item = ItemModel('test', 19.99)
         expected = {
             'name': 'test',
             'price': 19.99
