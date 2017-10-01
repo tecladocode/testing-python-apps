@@ -1,34 +1,41 @@
 from behave import *
 from selenium import webdriver
 
-use_step_matcher('re')
+from section10.video_code.tests.acceptance.pages.base_page import BasePage
+from section10.video_code.tests.acceptance.pages.blog_page import BlogPage
+from section10.video_code.tests.acceptance.pages.new_post_page import NewPostPage
 
-BASE_URL = 'http://127.0.0.1:5000/'
+use_step_matcher('re')
 
 
 @given('I am on the homepage')
 def step_impl(context):
     context.browser = webdriver.Chrome()
-    context.browser.get(BASE_URL)
+    page = BasePage(context.browser)
+    context.browser.get(page.url)
 
 
 @given('I am on the blog page')
 def step_impl(context):
     context.browser = webdriver.Chrome()
-    context.browser.get('{}blog'.format(BASE_URL))
+    page = BlogPage(context.browser)
+    context.browser.get(page.url)
 
 
 @given('I am on the new post page')
 def step_impl(context):
     context.browser = webdriver.Chrome()
-    context.browser.get('{}post'.format(BASE_URL))
+    page = NewPostPage(context.browser)
+    context.browser.get(page.url)
 
 
 @then('I am on the homepage')
 def step_impl(context):
-    assert context.browser.current_url == BASE_URL
+    page = BasePage(context.browser)
+    assert context.browser.current_url == page.url
 
 
 @then('I am on the blog page')
 def step_impl(context):
-    assert context.browser.current_url == '{}blog'.format(BASE_URL)
+    page = BlogPage(context.browser)
+    assert context.browser.current_url == page.url
