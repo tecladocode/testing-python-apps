@@ -1,3 +1,4 @@
+starter_code.zip
 .idea/
 .DS_Store
 __pycache__/
@@ -5,6 +6,7 @@ __pycache__/
 exports/
 presentations/
 videos/
+new_videos/
 .vscode/
 venv/
 testing-python-apps.txt

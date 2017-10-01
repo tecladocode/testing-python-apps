@@ -1,0 +1,2 @@
+class BasePage:
+    pass

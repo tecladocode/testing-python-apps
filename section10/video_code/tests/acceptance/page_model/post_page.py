@@ -1,0 +1,2 @@
+class PostPageLocators:
+    pass
