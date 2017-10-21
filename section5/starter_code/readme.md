@@ -11,4 +11,4 @@ When you've created the first test, you'll also need to create a correct runtime
 
 Create a sample unittest configuration, and choose:
 
-- `Path` as as target, with your project's `/tests` folder.
+- `Path` as target, with your project's `/tests` folder.
