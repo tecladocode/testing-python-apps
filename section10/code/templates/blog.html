@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('posts').style.display = 'block';
+        }, 3000);
+    };
+
+    </script>
+</head>
+<body>
+    <h1>This is the blog page</h1>
+
+    <a href="{{ url_for('homepage') }}" class="nav-link" id="home-link">Go to home</a>
+    <a href="{{ url_for('add_post') }}" class="nav-link" id="add-post-link">Create post</a>
+
+    <ol id="posts" style="display: none">
+        {% for post in posts %}
+        <li class="post"><a href="{{ url_for('see_post', title=post['title']) }}" class="post-link">{{ post['title'] }}</a></li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

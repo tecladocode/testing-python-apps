@@ -1,3 +1,6 @@
+*.key
+*.screenflow
+*.png
 starter_code.zip
 .idea/
 .DS_Store

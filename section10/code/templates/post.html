@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+{% if post %}
+    <h1>{{ post['title'] }}</h1>
+
+    <p>{{ post['content'] }}</p>
+{% else %}
+    <h1>Post not found!</h1>
+{% endif %}
+</body>
+</html>

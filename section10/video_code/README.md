@@ -17,12 +17,4 @@ cd section6/video_code/
 python -m behave tests/acceptance
 ```
 
-If you want to run the tests in PyCharm, you'll need to create appropriate configurations.
-
-Create a Python configuration for the app.
-
-[]
-
-Create a Python configuration for the running of behave tests.
-
-[]
+If you want to run the tests in PyCharm, you'll need to create appropriate configurations. We cover this in the course!

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Create post</h1>
+
+    <a href="{{ url_for('blog_page') }}" class="nav-link" id="blog-link">Back to blog</a>
+
+    <form method="POST" id="post-form">
+        <div>
+            <label for="title">Post title:</label>
+            <input type="text" name="title" id="title" />
+        </div>
+        <div>
+            <label for="content">Post content:</label>
+            <textarea name="content" id="content"></textarea>
+        </div>
+        <div>
+            <button type="submit" id="create-post">Create</button>
+        </div>
+    </form>
+</body>
+</html>
