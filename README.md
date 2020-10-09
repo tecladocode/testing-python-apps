@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/schoolofcode-me/testing-python-apps.svg?branch=master)](https://travis-ci.org/schoolofcode-me/testing-python-apps)
 
-# Testing Python Apps
+# Testing Python Apps- 
+
+# THERE ARE SOME AMAZING APPS !
 
 This repository contains the code covered by each section of my latest course, 'Testing Python Apps'.
 
