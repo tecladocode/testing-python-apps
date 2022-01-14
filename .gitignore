@@ -12,6 +12,7 @@ videos/
 new_videos/
 .vscode/
 venv/
+.venv/
 testing-python-apps.txt
 theme.key
 data.db

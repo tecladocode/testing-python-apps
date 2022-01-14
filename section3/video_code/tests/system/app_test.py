@@ -4,7 +4,7 @@ try:
 except ImportError:
     from mock import patch
 
-from section3.video_code import app
+import app
 from blog import Blog
 from post import Post
 
@@ -36,7 +36,7 @@ class AppTest(TestCase):
 
     def test_menu_calls_print_blogs(self):
         with patch('builtins.input') as mocked_input:
-            with patch('section3.video_code.app.print_blogs') as mocked_print_blogs:
+            with patch('app.print_blogs') as mocked_print_blogs:
                 mocked_input.side_effect = ('l', 'q')
                 app.menu()
 
@@ -44,7 +44,7 @@ class AppTest(TestCase):
 
     def test_menu_calls_ask_read_blogs(self):
         with patch('builtins.input') as mocked_input:
-            with patch('section3.video_code.app.ask_read_blog') as mocked_ask_read_blog:
+            with patch('app.ask_read_blog') as mocked_ask_read_blog:
                 mocked_input.side_effect = ('r', 'Test', 'q')
                 app.menu()
 
@@ -52,7 +52,7 @@ class AppTest(TestCase):
 
     def test_menu_calls_ask_create_post(self):
         with patch('builtins.input') as mocked_input:
-            with patch('section3.video_code.app.ask_create_post') as mocked_ask_create_post:
+            with patch('app.ask_create_post') as mocked_ask_create_post:
                 mocked_input.side_effect = ('p', 'Test', 'New Post', 'New Content', 'q')
                 app.menu()
 
@@ -75,7 +75,7 @@ class AppTest(TestCase):
 
     def test_ask_read_blog(self):
         with patch('builtins.input', return_value='Test'):
-            with patch('section3.video_code.app.print_posts') as mocked_print_posts:
+            with patch('app.print_posts') as mocked_print_posts:
                 app.ask_read_blog()
 
                 mocked_print_posts.assert_called_with(app.blogs['Test'])
@@ -84,7 +84,7 @@ class AppTest(TestCase):
         blog = app.blogs['Test']
         blog.create_post('Post title', 'Post content')
 
-        with patch('section3.video_code.app.print_post') as mocked_print_post:
+        with patch('app.print_post') as mocked_print_post:
             app.print_posts(blog)
 
             mocked_print_post.assert_called_with(blog.posts[0])
